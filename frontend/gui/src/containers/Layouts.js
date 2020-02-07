@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { connect } from 'react-redux';
+import * as actions from '../store/actions/auth';
+
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -18,23 +21,7 @@ class CustomLayout extends React.Component {
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <Header className="header">
-          <div className="logo" />
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={['2']}
-            style={{ lineHeight: '64px' }}
-          >
-            <Menu.Item key="1">Home</Menu.Item>
-            {
-              this.props.isAuthenticated ?
-            <Menu.Item key="2">Logout</Menu.Item>
-            :
-            <Menu.Item key="3">Login</Menu.Item>
-            }
-          </Menu>
-        </Header>
+        
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -78,7 +65,24 @@ class CustomLayout extends React.Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
+          <Header style={{ background: '#fff', padding: 0 }} >
+         
+            <div className="logo" />
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={['2']}
+              style={{ lineHeight: '64px' }}
+            >
+              <Menu.Item key="1">Home</Menu.Item>
+              {
+                this.props.isAuthenticated ?
+              <Menu.Item key="2" onClick={this.props.logout}>Logout</Menu.Item>
+              :
+              <Menu.Item key="3">Login</Menu.Item>
+              }
+            </Menu>
+          </Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
@@ -95,4 +99,10 @@ class CustomLayout extends React.Component {
   }
 }
 
-export default CustomLayout;
+const mapDispatchToProps = dispatch => {
+  return {
+      logout: () => dispatch(actions.logout()) 
+  }
+}
+
+export default withRouter(connect(null, mapDispatchToProps)(CustomLayout));
