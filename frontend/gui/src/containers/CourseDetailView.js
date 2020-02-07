@@ -2,8 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import { Card } from 'antd';
 
-import Courses from '../components/Courses';
-
 class CourseDetail extends React.Component {
    
         state = {

@@ -5,7 +5,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import BaseRouter from './routes';
 
 import CustomLayout from './containers/Layouts';
-import CourseList from './containers/CourseListView';
 
 class App extends Component {
   render() {
