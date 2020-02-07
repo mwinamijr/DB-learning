@@ -18,6 +18,23 @@ class CustomLayout extends React.Component {
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
+        <Header className="header">
+          <div className="logo" />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={['2']}
+            style={{ lineHeight: '64px' }}
+          >
+            <Menu.Item key="1">Home</Menu.Item>
+            {
+              this.props.isAuthenticated ?
+            <Menu.Item key="2">Logout</Menu.Item>
+            :
+            <Menu.Item key="3">Login</Menu.Item>
+            }
+          </Menu>
+        </Header>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
