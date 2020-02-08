@@ -9,13 +9,12 @@ class CourseDetail extends React.Component {
         }
 
         componentDidMount() {
-            const courseID=this.props.match.params.articleID;
+            const courseID=this.props.match.params.courseID;
             axios.get(`http://127.0.0.1:8000/api/${courseID}`)
             .then(res => {
                 this.setState({
                     courses: res.data
                 });
-                console.log(res.data);
             })
         }
     render() {

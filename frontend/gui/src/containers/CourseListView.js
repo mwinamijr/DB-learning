@@ -28,7 +28,6 @@ class CourseList extends React.Component {
                 this.setState({
                     courses: res.data
                 });
-                console.log(res.data);
             })
         }
     render() {

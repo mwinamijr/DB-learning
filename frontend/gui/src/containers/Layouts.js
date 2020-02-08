@@ -30,7 +30,14 @@ class CustomLayout extends React.Component {
               defaultSelectedKeys={['2']}
               style={{ lineHeight: '64px' }}
             >
-              <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
+              <Menu.Item key="1">
+                <Icon type="home" />
+                <span><Link to="/">Home</Link></span>
+              </Menu.Item>
+              <Menu.Item key="2">
+                <Icon type="read" />
+                <span><Link to="/courses">Courses</Link></span>
+              </Menu.Item>
               {
                 this.props.isAuthenticated ?
               <Menu.Item key="2" onClick={this.props.logout}>Logout</Menu.Item>
@@ -44,42 +51,50 @@ class CustomLayout extends React.Component {
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1">
-              <Icon type="pie-chart" />
-              <span>Option 1</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="desktop" />
-              <span>Option 2</span>
-            </Menu.Item>
-            <SubMenu
+          <SubMenu
               key="sub1"
               title={
                 <span>
-                  <Icon type="user" />
-                  <span>User</span>
+                  <Icon type="read" />
+                  <span>Courses</span>
                 </span>
               }
             >
-              <Menu.Item key="3">Tom</Menu.Item>
-              <Menu.Item key="4">Bill</Menu.Item>
-              <Menu.Item key="5">Alex</Menu.Item>
+              <Menu.Item key="1">Maths</Menu.Item>
+              <Menu.Item key="2">Chemistry</Menu.Item>
+              <Menu.Item key="3">Biology</Menu.Item>
             </SubMenu>
             <SubMenu
               key="sub2"
               title={
                 <span>
-                  <Icon type="team" />
-                  <span>Team</span>
+                  <Icon type="read" />
+                  <span>Classes</span>
                 </span>
               }
             >
-              <Menu.Item key="6">Team 1</Menu.Item>
-              <Menu.Item key="8">Team 2</Menu.Item>
+              <Menu.Item key="4">Form One</Menu.Item>
+              <Menu.Item key="5">Form Two</Menu.Item>
+              <Menu.Item key="6">Form Three</Menu.Item>
+              <Menu.Item key="7">Form Four</Menu.Item>
             </SubMenu>
+            <Menu.Item key="8">
+              <Icon type="play-square" />
+              <span>Videos</span>
+            </Menu.Item>
             <Menu.Item key="9">
+              <Icon type="edit" />
+              <span>Exercises</span>
+            </Menu.Item>
+            <Menu.Item key="10">
+              <Icon type="question-circle" />
+              <span>FAQ's</span>
+            </Menu.Item>
+            <Menu.Item key="11">
               <Icon type="file" />
-              <span>File</span>
+              <span>
+                <Link to="/about">About</Link>
+                </span>
             </Menu.Item>
           </Menu>
         </Sider>
