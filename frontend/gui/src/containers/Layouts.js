@@ -21,7 +21,26 @@ class CustomLayout extends React.Component {
   render() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        
+        <Layout>
+        <Header className="header" style={{ background: '#fff', padding: 0 }} >
+            <div className="logo" />
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={['2']}
+              style={{ lineHeight: '64px' }}
+            >
+              <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
+              {
+                this.props.isAuthenticated ?
+              <Menu.Item key="2" onClick={this.props.logout}>Logout</Menu.Item>
+              :
+              <Menu.Item key="3"><Link to="/login/">Login</Link></Menu.Item>
+              }
+            </Menu>
+          </Header>
+          </Layout>
+        <Layout>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
           <div className="logo" />
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -64,25 +83,6 @@ class CustomLayout extends React.Component {
             </Menu.Item>
           </Menu>
         </Sider>
-        <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} >
-         
-            <div className="logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={['2']}
-              style={{ lineHeight: '64px' }}
-            >
-              <Menu.Item key="1">Home</Menu.Item>
-              {
-                this.props.isAuthenticated ?
-              <Menu.Item key="2" onClick={this.props.logout}>Logout</Menu.Item>
-              :
-              <Menu.Item key="3">Login</Menu.Item>
-              }
-            </Menu>
-          </Header>
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
@@ -92,6 +92,8 @@ class CustomLayout extends React.Component {
                 {this.props.children}
                 </div>
           </Content>
+        </Layout>
+        <Layout>
           <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </Layout>
       </Layout>
