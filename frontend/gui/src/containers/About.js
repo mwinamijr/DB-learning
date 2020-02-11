@@ -1,5 +1,4 @@
 import React from 'react';
-import learn from '../learn.jpg'
 import '../index.css'
 
 class About extends React.Component {

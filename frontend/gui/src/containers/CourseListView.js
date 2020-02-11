@@ -17,7 +17,7 @@ for (let i = 0; i < 23; i++) {
 }
 
 class CourseList extends React.Component {
-   
+    Exercises
         state = {
             courses:[]
         }

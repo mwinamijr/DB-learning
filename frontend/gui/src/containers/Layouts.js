@@ -38,6 +38,8 @@ class CustomLayout extends React.Component {
                 <Icon type="read" />
                 <span><Link to="/courses">Courses</Link></span>
               </Menu.Item>
+              <Menu.Item key="12">Career</Menu.Item>
+              <Menu.Item key="13">Contact</Menu.Item>
               {
                 this.props.isAuthenticated ?
               <Menu.Item key="2" onClick={this.props.logout}>Logout</Menu.Item>
@@ -56,7 +58,7 @@ class CustomLayout extends React.Component {
               title={
                 <span>
                   <Icon type="read" />
-                  <span>Courses</span>
+                  <span>Subjects</span>
                 </span>
               }
             >
@@ -86,6 +88,10 @@ class CustomLayout extends React.Component {
               <Icon type="edit" />
               <span>Exercises</span>
             </Menu.Item>
+            <Menu.Item key="9">
+              <Icon type="line-chart" />
+              <span>Records</span>
+            </Menu.Item>
             <Menu.Item key="10">
               <Icon type="question-circle" />
               <span>FAQ's</span>
@@ -101,7 +107,7 @@ class CustomLayout extends React.Component {
           <Content style={{ margin: '0 16px' }}>
             <Breadcrumb style={{ margin: '16px 0' }}>
               <Breadcrumb.Item><Link to='/'>Home</Link></Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
+              <Breadcrumb.Item>Learn</Breadcrumb.Item>
             </Breadcrumb>
             <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>
                 {this.props.children}

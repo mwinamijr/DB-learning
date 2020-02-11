@@ -14,7 +14,7 @@ class Index extends React.Component {
                     covers at most every requirements accoring to your learning syllabus.
                 </p>
                 <p>
-                    <em>We provide you leaning materials of your level.</em>
+                    <em>"We provide you leaning materials of your level."</em>
                 </p>
                 <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor lobortis convallis. Vestibulum nec arcu magna. Vestibulum mattis gravida magna, quis vulputate quam. Suspendisse laoreet urna sed libero tempus fringilla. Etiam aliquet lorem sapien, at tincidunt augue vulputate sit amet. Aenean sit amet eros tortor. Curabitur convallis turpis ac lectus pulvinar, ut pretium arcu placerat. Phasellus iaculis a ipsum ac tempus. Aenean hendrerit nibh vel purus auctor rutrum. Etiam pellentesque augue in tellus ullamcorper, eu consequat orci viverra. Praesent leo dui, sollicitudin in sodales id, commodo id purus. In quis lorem nec sem volutpat vehicula. Integer fermentum, turpis eu ultrices dignissim, risus lorem interdum lacus, eget scelerisque massa felis nec neque. Donec enim nisl, lobortis vitae erat et, mollis volutpat orci. Nam dictum ante id nisl condimentum pretium. Integer id nulla rutrum, finibus nisi ac, pellentesque enim.
